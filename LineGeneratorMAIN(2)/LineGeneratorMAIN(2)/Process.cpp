@@ -4,6 +4,14 @@
 #include<vector>
 using namespace std;
 
+int Process::random_num(int start, int end)
+{
+	int range = (end - start) + 1;
+	int random_int = start + (rand() % range);
+	return random_int;
+}
+
+
 char Process::mutated_genes()
 {
 	const string GENES = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOP"\
