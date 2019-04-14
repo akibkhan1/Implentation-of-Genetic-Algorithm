@@ -12,5 +12,6 @@ public:
 	int fitness;
 	Individual(string chromosome);
 	Individual mate(Individual parent2);
+	int cal_fitness();
 };
 
