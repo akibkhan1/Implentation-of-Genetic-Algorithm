@@ -23,19 +23,36 @@ int main()
         population.push_back(Individual(gnom));
     }
     while (1)
-	{
-		
-		sort(population.begin(), population.end());
-		if (population[0].fitness <= 0)
-		{
-			break;
-		}
+    {
 
-		vector<Individual> new_generation;
+        sort(population.begin(), population.end());
+        if (population[0].fitness <= 0)
+        {
+            break;
+        }
 
-		int s = (10 * POPULATION_SIZE) / 100;
-		for (int i = 0; i < s; i++)
-			new_generation.push_back(population[i]);
-	}
+        vector<Individual> new_generation;
+
+        int s = (10 * POPULATION_SIZE) / 100;
+        for (int i = 0; i < s; i++)
+            new_generation.push_back(population[i]);
+        s = (90 * POPULATION_SIZE) / 100;
+        for (int i = 0; i < s; i++)
+        {
+            int len = population.size();
+            int r = ob1[i].random_num(0, 50);
+            Individual parent1 = population[r];
+            r = ob1[i].random_num(0, 50);
+            Individual parent2 = population[r];
+            Individual offspring = parent1.mate(parent2);
+            new_generation.push_back(offspring);
+        }
+        population = new_generation;
+        cout << "Generation: " << generation << "\n";
+        cout << "String: " << population[0].chromosome << "\n";
+        cout << "Fitness: " << population[0].fitness << "\n\n";
+
+        generation++;
+    }
 }
 
