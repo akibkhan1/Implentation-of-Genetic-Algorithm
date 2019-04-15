@@ -23,7 +23,7 @@ char Process::mutated_genes()
 
 string Process::create_gnome()
 {
-	string TARGET="Line Generator";
+	string TARGET="LINE GENERATOR";
 	int len = TARGET.size();
 	string gnome = "";
 	for (int i = 0; i < len; i++)
