@@ -31,3 +31,16 @@ Individual Individual::mate(Individual par2)
 	}
 	return Individual(child_chromosome);
 };
+
+int Individual::cal_fitness()
+{
+	string TARGET="LINE GENERATOR";
+	int len = TARGET.size();
+	int fitness = 0;
+	for (int i = 0; i < len; i++)
+	{
+		if (chromosome[i] != TARGET[i])
+			fitness++;
+	}
+	return fitness;
+}
