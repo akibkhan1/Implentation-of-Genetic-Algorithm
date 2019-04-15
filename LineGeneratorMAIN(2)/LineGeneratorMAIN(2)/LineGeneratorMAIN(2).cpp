@@ -22,5 +22,20 @@ int main()
         string gnom = ob1[i].create_gnome();
         population.push_back(Individual(gnom));
     }
+    while (1)
+	{
+		
+		sort(population.begin(), population.end());
+		if (population[0].fitness <= 0)
+		{
+			break;
+		}
+
+		vector<Individual> new_generation;
+
+		int s = (10 * POPULATION_SIZE) / 100;
+		for (int i = 0; i < s; i++)
+			new_generation.push_back(population[i]);
+	}
 }
 
