@@ -54,5 +54,8 @@ int main()
 
         generation++;
     }
+	cout << "Generation: " << generation << "\n";
+	cout << "String: " << population[0].chromosome << "\n";
+	cout << "Fitness: " << population[0].fitness << "\n\n";
 }
 
