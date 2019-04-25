@@ -11,7 +11,7 @@ class pvector
 {
 public:
 	double x, y;
-	pvector() : x(0), y(0) {};
+	pvector() : x(0), y(0) {}
 	pvector(double X, double Y) : x(X), y(Y) {}
 
 	double GetLength() const
@@ -30,7 +30,9 @@ public:
 	{
 		return (x * Vec.x) + (y * Vec.y);
 	}
+	pvector& fromAngle (double);
 	double Angle(pvector);
+
 	double GreaterAngle(pvector rightVec)
 	{
 		return double((2 * pi) - Angle(rightVec));

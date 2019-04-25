@@ -1,7 +1,11 @@
 #include "stdafx.h"
 #include "pvector.h"
 
-
+pvector& pvector::fromAngle(double ang) {
+	x = cos(ang);
+	y = sin(ang);
+	return *this;
+}
 double pvector::Angle(pvector Vec) {
 	pvector tempVec = Normalized();
 	double temp = tempVec.Dot(Vec.Normalized());
